@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+.main-nav li {
+  display: inline;
+  padding: 1em;
+  max-width: 800px;
+}
