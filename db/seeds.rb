@@ -7,9 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 ActiveRecord::Base.transaction do
-  User.create!(email: "mark@example.com", password: "password")
-  User.create!(email: "bloop@example.com", password: "password")
-  User.create!(email: "blarp@example.com", password: "password")
+  User.create!(
+    :display_name => "Mark",
+    :email => "mark@example.com",
+    :password => "password"
+  )
+  User.create!(
+    :display_name => "Bloop",
+    :email => "bloop@example.com",
+    :password => "password"
+  )
+  User.create!(
+    :display_name => "Blarp",
+    :email => "blarp@example.com",
+    :password => "password"
+  )
 
   Question.create!(
     :title => "Is this the first question?",
