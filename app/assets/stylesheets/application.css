@@ -27,3 +27,7 @@ ul.hmenu li {
   padding: 1em;
   max-width: 800px;
 }
+
+.right {
+  float: right;
+}
