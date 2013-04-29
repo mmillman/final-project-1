@@ -1,3 +1,3 @@
 class Question < ActiveRecord::Base
-  attr_accessible :accepted_answer_id, :asker_id, :body, :title
+  attr_accessible :accepted_answer_id, :asker_id, :body, :title, :tag_ids
 end

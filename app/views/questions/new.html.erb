@@ -1,0 +1,21 @@
+<form action="/questions" method="post">
+  <label for="question_title">Title</label>
+  <input type="text" id="question_title" name="question[title]">
+
+  <br>
+  <br>
+
+  <textarea id="question_body" name="question[body]"></textarea>
+
+  <br>
+  <br>
+
+  <label for="question_tag_ids">Tags</label>
+  <br>
+  <input type="text" id="question_tag_ids" name="question[tag_ids]">
+
+  <br>
+  <br>
+
+  <input type="submit" value="Post question">
+</form>
