@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <ul class="hmenu">
+    <%= render 'devise/menu/registration_items' %>
+    <%= render 'devise/menu/login_items' %>
+  </ul>
   <div class="main-nav">
     <ul>
       <li>Questions</li>
@@ -16,6 +20,7 @@
       <li>Ask Question</li>
     </ul>
   </div>
+
   <!-- Devise setup step 3 -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
