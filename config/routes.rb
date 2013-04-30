@@ -7,6 +7,6 @@ StackOverflowClone::Application.routes.draw do
   root :to => 'static_pages#home'
 
   match 'questions/ask' => 'questions#new', :as => 'ask_question', :via => :get
-  resources :questions, :only => [:create, :index, :new]
+  resources :questions, :only => [:create, :index, :show]
 
 end
