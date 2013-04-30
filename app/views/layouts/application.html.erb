@@ -13,20 +13,21 @@
       <%= render 'devise/menu/login_items' %>
     </ul>
   </div>
+  <h1>Stack Underflow</h1>
   <div class="main-nav">
     <ul>
-      <li><%= link_to "Questions", questions_url %></li>
+      <li>Questions</li>
       <li>Tags</li>
-      <li><%= link_to "Users", users_url %></li>
+      <li>Users</li>
       <li>Unanswered</li>
-      <li><%= link_to "Ask Question", ask_question_url %></li>
+      <li>Ask Question</li>
     </ul>
   </div>
 
   <!-- Devise setup step 3 -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
