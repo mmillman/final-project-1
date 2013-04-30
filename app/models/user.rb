@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   attr_accessible :display_name
+
+  has_one :profile, :class_name => "UserProfile"
+  has_many :questions, :foreign_key => :asker_id
+  has_many :answers, :foreign_key => :answerer_id
+  has_many :comments, :as => :commentable
+  has_many :question_votes
+  has_many :answer_votes
 end
