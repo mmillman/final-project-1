@@ -29,7 +29,7 @@ ActiveRecord::Base.transaction do
     :fname => "Bloop",
     :lname => "Bleep",
     :birthday => "1854-06-11",
-    :about_me => "Hi, my name is Mark."
+    :about_me => "Hi, my name is Bloop."
   )
   User.create!(
     :display_name => "BB123",
@@ -41,18 +41,20 @@ ActiveRecord::Base.transaction do
     :fname => "Blarp",
     :lname => "Blep",
     :birthday => "1955-01-05",
-    :about_me => "Hi, my name is Mark."
+    :about_me => "Hi, my name is Blarp."
   )
 
   Question.create!(
-    :title => "Is this the first question?",
-    :body => "This should be the first question...",
+    :title => "No overflow??",
+    :body => "I initialized an array of length 5 and added one item. Everything
+      seems to be okay. How to fix?",
     :asker_id => 1,
     :accepted_answer_id => 2,
   )
   Question.create!(
-    :title => "Is this the second question?",
-    :body => "This should be the second question...",
+    :title => "How to fix git status?",
+    :body => "I typed git status and it showed the status of my files.
+      How to fix?",
     :asker_id => 1,
     :accepted_answer_id => nil,
   )
@@ -60,16 +62,16 @@ ActiveRecord::Base.transaction do
   Answer.create!(
     :answerer_id => 2,
     :question_id => 1,
-    :body => "Answer to first question: yes",
+    :body => "Add 5 more items to your array to address the issue.",
   )
   Answer.create!(
     :answerer_id => 3,
     :question_id => 1,
-    :body => "Yep, this is the first question.",
+    :body => "Initialize more arrays of length 5 and add 6 items to one.",
   )
   Answer.create!(
     :answerer_id => 3,
     :question_id => 2,
-    :body => "Indeed, this is the second question.",
+    :body => "Try making a typo when you type it, like 'git sattus'",
   )
 end
