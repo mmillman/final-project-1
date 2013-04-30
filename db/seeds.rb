@@ -12,15 +12,36 @@ ActiveRecord::Base.transaction do
     :email => "mark@example.com",
     :password => "password"
   )
+  UserProfile.create!(
+    :user_id => 1,
+    :fname => "Mark",
+    :lname => "M",
+    :birthday => "2054-08-15",
+    :about_me => "Hi, my name is Mark."
+  )
   User.create!(
     :display_name => "Bloop",
     :email => "bloop@example.com",
     :password => "password"
   )
+  UserProfile.create!(
+    :user_id => 2,
+    :fname => "Bloop",
+    :lname => "Bleep",
+    :birthday => "1854-06-11",
+    :about_me => "Hi, my name is Mark."
+  )
   User.create!(
-    :display_name => "Blarp",
+    :display_name => "BB123",
     :email => "blarp@example.com",
     :password => "password"
+  )
+  UserProfile.create!(
+    :user_id => 3,
+    :fname => "Blarp",
+    :lname => "Blep",
+    :birthday => "1955-01-05",
+    :about_me => "Hi, my name is Mark."
   )
 
   Question.create!(
