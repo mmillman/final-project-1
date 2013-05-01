@@ -4,10 +4,6 @@ SU.Views.NavbarView = Backbone.View.extend({
     this.links = options.links;
   },
 
-  events: {
-    "click li a": "navigate"
-  },
-
   render: function () {
     var $ul = $('<ul></ul>');
 
@@ -19,11 +15,4 @@ SU.Views.NavbarView = Backbone.View.extend({
 
     return this;
   },
-
-  navigate: function (event) {
-    var linkHref = event.target.href;
-
-    console.log("navigating to '", linkHref, "'");
-    Backbone.history.navigate(linkHref, { "trigger": true });
-  }
 });

@@ -20,23 +20,23 @@ window.SU = {
 
     var links = [
       {
-        "href": "/#questions",
+        "href": "/#/questions",
         "html": "Questions"
       },
       {
-        "href": "/#tags",
+        "href": "/#/tags",
         "html": "Tags"
       },
       {
-        "href": "/#users",
+        "href": "/#/users",
         "html": "Users"
       },
       {
-        "href": "/#unanswered",
+        "href": "/#/unanswered",
         "html": "Unanswered"
       },
       {
-        "href": "/#ask",
+        "href": "/#/ask",
         "html": "Ask Question"
       },
     ];
