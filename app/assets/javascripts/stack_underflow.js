@@ -1,4 +1,4 @@
-var SU = {
+window.SU = {
   Models: {},
   Collections: {},
   Views: {},
