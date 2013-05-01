@@ -5,11 +5,11 @@ var SU = {
   Routers: {},
   Store: {},
 
-  initialize: function () {
+  initialize: function ($content) {
     this.installNavbar($('.main-nav'));
 
-    new SU.Routers.QuestionsRouter();
-    new SU.Routers.UsersRouter();
+    new SU.Routers.QuestionsRouter($content);
+    new SU.Routers.UsersRouter($content);
 
     Backbone.history.start();
     console.log("SU initialized");
