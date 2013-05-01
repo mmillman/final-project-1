@@ -7,21 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="right">
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
+  <div class="container">
+    <div class="right">
+      <ul class="hmenu">
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+      </ul>
+    </div>
+    <h1>Stack Half Full</h1>
+    <div class="main-nav"></div>
+
+    <!-- Devise setup step 3 -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    <div class="content"></div>
   </div>
-  <h1>Stack Half Full</h1>
-  <div class="main-nav"></div>
-
-  <!-- Devise setup step 3 -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= yield %>
-
-  <div class="content"></div>
 </body>
 </html>

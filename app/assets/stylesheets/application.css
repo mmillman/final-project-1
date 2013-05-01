@@ -28,6 +28,11 @@ ul.hmenu li {
   max-width: 800px;
 }
 
+.container {
+  width: 960px;
+  margin: auto;
+}
+
 .right {
   float: right;
 }
