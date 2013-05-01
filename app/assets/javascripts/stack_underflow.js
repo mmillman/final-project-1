@@ -5,8 +5,18 @@ window.SU = {
   Routers: {},
   Store: {},
 
-  initialize: function ($content) {
-    this.installNavbar($('.main-nav'));
+  initialize: function ($content, $navbar, questionsData) {
+    console.log(questionsData);
+
+    questions = new SU.Collections.Questions();
+    _(questionsData).each(function(questionsDatum) {
+      questions.add(new SU.Models.Question(questionsDatum));
+    });
+    console.log(questions);
+
+    SU.Store.allQuestions = questions;
+
+    this.installNavbar($navbar);
 
     new SU.Routers.QuestionsRouter($content);
     new SU.Routers.UsersRouter($content);

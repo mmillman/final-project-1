@@ -1,19 +1,14 @@
 <script type="text/javascript">
   $(function () {
     var questionsData = <%= Question.all.to_json.html_safe %>
-    console.log(questionsData);
 
-    questions = new SU.Collections.Questions();
-    _(questionsData).each(function(questionsDatum) {
-      questions.add(new SU.Models.Question(questionsDatum));
-    });
-
-    console.log(questions);
-
-    SU.Store.allQuestions = questions;
+    var $content = $('.content');
+    var $navbar = $('.main-nav');
 
     SU.initialize(
-      $('.content')
+      $content,
+      $navbar,
+      questionsData
     );
   });
 </script>
