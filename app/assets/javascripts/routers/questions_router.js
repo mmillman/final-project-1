@@ -8,6 +8,7 @@ SU.Routers.QuestionsRouter = Backbone.Router.extend({
     "": "topQuestionsList",
     "questions": "allQuestions",
     "ask": "newQuestion",
+    "questions/:id": "showQuestion",
   },
 
   topQuestionsList: function () {
@@ -34,5 +35,15 @@ SU.Routers.QuestionsRouter = Backbone.Router.extend({
     });
 
     this.$rootEl.html(questionsListView.render().$el);
+  },
+
+  showQuestion: function (id) {
+    console.log("routing with showQuestion");
+
+    var questionShowView = new SU.Views.QuestionShowView({
+      model: SU.Store.allQuestions.get(id)
+    });
+
+    this.$rootEl.html(questionShowView.render().$el);
   }
 });
