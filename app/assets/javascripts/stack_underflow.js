@@ -6,25 +6,45 @@ var SU = {
   Store: {},
 
   initialize: function () {
-    console.log("SU initialized");
-
-    SU.installNavBar($('.main-nav'));
+    this.installNavbar($('.main-nav'));
 
     new SU.Routers.QuestionsRouter();
     new SU.Routers.UsersRouter();
 
     Backbone.history.start();
+    console.log("SU initialized");
   },
 
-  installNavBar: function ($navbar) {
-    console.log("Installing navbar")
-    var $ul = $('<ul></ul>');
+  installNavbar: function ($navbar) {
+    console.log("Installing navbar");
 
-    var link_names = ["Questions", "Tags", "Users", "Unanswered", "Ask Question"];
-    _(link_names).each(function(linkName) {
-      $ul.append('<li>' + linkName + '</li>');
+    var links = [
+      {
+        "href": "/#questions",
+        "html": "Questions"
+      },
+      {
+        "href": "/#tags",
+        "html": "Tags"
+      },
+      {
+        "href": "/#users",
+        "html": "Users"
+      },
+      {
+        "href": "/#unanswered",
+        "html": "Unanswered"
+      },
+      {
+        "href": "/#ask",
+        "html": "Ask Question"
+      },
+    ];
+
+    var navBarView = new SU.Views.NavbarView({
+      "links": links
     });
 
-    $navbar.append($ul);
+    $navbar.html(navBarView.render().$el);
   }
 }
