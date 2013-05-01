@@ -1,7 +1,11 @@
 <div class="questions-list-all">
   <ul>
     <% questions.each(function(question) { %>
-      <li><%= question.escape("title") %></li>
+      <li>
+        <a href="/#/questions/<%= question.get("id") %>">
+          <%= question.escape("title") %>
+        </a>
+      </li>
     <% }); %>
   </ul>
 </div>
