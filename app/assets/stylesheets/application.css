@@ -22,17 +22,63 @@ ul.hmenu li {
   display: inline;
 }
 
-.main-nav li {
+.hlogo {
+  float: left;
+}
+
+.hlogo h1 {
   display: inline;
-  padding: 1em;
-  max-width: 800px;
+  position: relative;
+  bottom: 0px;
+}
+
+.main-nav li {
+  float: left;
+  display: inline;
+  padding: 0px 0px 0px 2em;
+  max-width: 100%;
 }
 
 .container {
-  width: 960px;
+  width: 800px;
   margin: auto;
+}
+
+.questions-list-all li {
+  padding-bottom: 15px;
+}
+
+.new-question-form {
+  width: 500px;
+}
+
+.question-title {
+  display: inline;
+}
+
+.question-title label {
+  padding-right: 10px;
+}
+
+.question-title input {
+  font-weight: bold;
+  width: 50%;
+}
+
+.question-body {
+  width: 500px;
+}
+
+.question-body textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
 }
 
 .right {
   float: right;
+}
+
+.clear {
+  clear: both;
 }

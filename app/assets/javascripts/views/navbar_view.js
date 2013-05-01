@@ -11,7 +11,10 @@ SU.Views.NavbarView = Backbone.View.extend({
       $ul.append('<li><a href="' + link.href + '">' + link.html + '</a></li>');
     });
 
+    $ul.find('li:last-child').css('float', 'right');
+
     this.$el.html($ul);
+    this.$el.append('<div style="clear: both;"></div>');
 
     return this;
   },
