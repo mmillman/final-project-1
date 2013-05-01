@@ -5,12 +5,13 @@ SU.Routers.QuestionsRouter = Backbone.Router.extend({
   },
 
   routes: {
-    "questions": "topQuestionsIndex",
+    "": "topQuestionsList",
+    "questions": "allQuestions",
     "ask": "newQuestion",
   },
 
-  topQuestionsIndex: function () {
-    console.log("routing with topQuestionsIndex");
+  topQuestionsList: function () {
+    console.log("routing with topQuestionsList");
   },
 
   newQuestion: function () {
@@ -23,5 +24,15 @@ SU.Routers.QuestionsRouter = Backbone.Router.extend({
     });
 
     this.$rootEl.html(newQuestionView.render().$el);
+  },
+
+  allQuestions: function () {
+    console.log("routing with allQuestions");
+
+    var questionsListView = new SU.Views.QuestionsListView({
+      collection: SU.Store.allQuestions
+    });
+
+    this.$rootEl.html(questionsListView.render().$el);
   }
 });

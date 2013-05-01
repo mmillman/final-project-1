@@ -1,0 +1,7 @@
+<div class="questions-list-all">
+  <ul>
+    <% questions.each(function(question) { %>
+      <li><%= question.escape("title") %></li>
+    <% }); %>
+  </ul>
+</div>
