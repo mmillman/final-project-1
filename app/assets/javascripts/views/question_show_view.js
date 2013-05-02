@@ -12,8 +12,12 @@ SU.Views.QuestionShowView = Backbone.View.extend({
       question: this.model
     });
 
+    var newAnswer = new SU.Models.Answer({
+      question_id: this.model.get("id")
+    });
+
     var newAnswerView = new SU.Views.NewAnswerView({
-      model: new SU.Models.Answer()
+      model: newAnswer
     });
 
     this.$el.html(renderedContent);

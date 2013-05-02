@@ -3,6 +3,10 @@ SU.Views.NewAnswerView = Backbone.View.extend({
     console.log("NewAnswerView initialized");
   },
 
+  events: {
+    "click button#submit-answer": "postAnswer"
+  },
+
   template: JST["answers/new"],
 
   render: function () {
@@ -13,5 +17,15 @@ SU.Views.NewAnswerView = Backbone.View.extend({
     this.$el.html(renderedContent);
 
     return this;
+  },
+
+  postAnswer: function () {
+    console.log("Posting answer");
+
+    this.model.set({
+      "body": this.$('#answer_body').val()
+    });
+
+    this.model.save();
   }
 });
