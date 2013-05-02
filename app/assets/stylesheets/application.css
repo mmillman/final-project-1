@@ -20,6 +20,7 @@ ul.hmenu {
 
 ul.hmenu li {
   display: inline;
+  padding-left: 1em;
 }
 
 .hlogo {
@@ -52,17 +53,17 @@ ul.hmenu li {
   width: 500px;
 }
 
-.question-title {
-  display: inline;
+.new-question-form label {
+  font-weight: bold;
 }
 
-.question-title label {
+.question-title {
+  display: inline;
   font-weight: bold;
-  padding-right: 10px;
 }
 
 .question-title input {
-  width: 50%;
+  width: 100%;
 }
 
 .question-body {
