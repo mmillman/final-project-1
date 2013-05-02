@@ -9,4 +9,10 @@ class AnswersController < ApplicationController
       render :json => answer.errors, :status => 422
     end
   end
+
+  def index
+    answers = Answer.where(["question_id = ?", params[:question_id]])
+
+    render :json => answers
+  end
 end
