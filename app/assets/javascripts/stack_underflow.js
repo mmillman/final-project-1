@@ -57,4 +57,4 @@ window.SU = {
 
     $navbar.html(navBarView.render().$el);
   }
-}
+};
