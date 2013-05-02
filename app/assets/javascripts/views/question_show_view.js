@@ -12,7 +12,12 @@ SU.Views.QuestionShowView = Backbone.View.extend({
       question: this.model
     });
 
+    var newAnswerView = new SU.Views.NewAnswerView({
+      model: new SU.Models.Answer()
+    });
+
     this.$el.html(renderedContent);
+    this.$el.append(newAnswerView.render().$el);
 
     return this;
   }
