@@ -3,6 +3,14 @@ class QuestionsController < ApplicationController
   # respond_to :html, :only => [:index]
 
   def create
+    question = Question.new(params[:question])
+    question.asker_id = current_user.id
+
+    if question.save
+      render :json => question
+    else
+      render :json => question.errors, :status => 422
+    end
   end
 
   def index

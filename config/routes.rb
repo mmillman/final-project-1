@@ -4,4 +4,6 @@ StackOverflowClone::Application.routes.draw do
   # Devise setup step 2
   root :to => 'questions#index'
 
+  resources :questions, :only => [:create]
+
 end

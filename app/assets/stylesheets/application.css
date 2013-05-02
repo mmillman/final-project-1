@@ -57,11 +57,11 @@ ul.hmenu li {
 }
 
 .question-title label {
+  font-weight: bold;
   padding-right: 10px;
 }
 
 .question-title input {
-  font-weight: bold;
   width: 50%;
 }
 
