@@ -25,6 +25,10 @@ SU.Views.NewQuestionView = Backbone.View.extend({
       "body": this.$('#question_body').val(),
     });
 
-    this.model.save();
+    this.model.save({}, {
+      success: function () {
+        Backbone.history.navigate('#/questions');
+      }
+    });
   },
 });
