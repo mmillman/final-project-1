@@ -1,6 +1,5 @@
 SU.Views.NavbarView = Backbone.View.extend({
   initialize: function(options) {
-    console.log("NavbarView initialized");
     this.links = options.links;
   },
 

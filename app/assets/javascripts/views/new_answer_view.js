@@ -1,6 +1,6 @@
 SU.Views.NewAnswerView = Backbone.View.extend({
-  initialize: function () {
-    console.log("NewAnswerView initialized");
+  initialize: function (options) {
+    this.parentView = options.parentView;
   },
 
   events: {
@@ -10,8 +10,6 @@ SU.Views.NewAnswerView = Backbone.View.extend({
   template: JST["answers/new"],
 
   render: function () {
-    console.log("Rendering NewAnswerView");
-
     var renderedContent = this.template();
 
     this.$el.html(renderedContent);
@@ -20,12 +18,18 @@ SU.Views.NewAnswerView = Backbone.View.extend({
   },
 
   postAnswer: function () {
+    var that = this;
     console.log("Posting answer");
 
     this.model.set({
-      "body": this.$('#answer_body').val()
+      "body": this.$('#answer_body').val(),
     });
 
-    this.model.save();
+    this.model.save({}, {
+      success: function () {
+        console.log("new answer successfully saved!");
+        that.parentView.addToAnswers(that.model);
+      }
+    });
   }
 });

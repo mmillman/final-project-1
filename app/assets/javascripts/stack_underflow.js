@@ -6,13 +6,10 @@ window.SU = {
   Store: {},
 
   initialize: function ($content, $navbar, questionsData) {
-    console.log(questionsData);
-
     questions = new SU.Collections.Questions();
     _(questionsData).each(function(questionsDatum) {
       questions.add(new SU.Models.Question(questionsDatum));
     });
-    console.log(questions);
 
     SU.Store.allQuestions = questions;
 
@@ -22,12 +19,9 @@ window.SU = {
     new SU.Routers.UsersRouter($content);
 
     Backbone.history.start();
-    console.log("SU initialized");
   },
 
   installNavbar: function ($navbar) {
-    console.log("Installing navbar");
-
     var links = [
       {
         "href": "/#/questions",

@@ -1,56 +1,62 @@
 SU.Views.QuestionShowView = Backbone.View.extend({
   initialize: function () {
-    console.log("QuestionShowView initialized");
+    this.question_id = this.model.get("id");
+    this.answers = new SU.Collections.QuestionAnswers({
+      question_id: this.question_id
+    });
   },
 
   template: JST["questions/show"],
 
   render: function () {
-    console.log("Rendering QuestionShowView");
-
-    this.renderStatic();
-    this.fetchThenRender();
+    this.renderTemplate();
+    this.renderNewAnswerView();
+    this.fetchThenRenderAnswersList();
 
     return this;
   },
 
-  renderStatic: function () {
-    console.log("  renderStatic called");
+  renderTemplate: function () {
     var renderedContent = this.template({
       question: this.model
     });
     this.$el.html(renderedContent);
+  },
 
-    var newAnswer = new SU.Models.Answer({
-      question_id: this.model.get("id")
-    });
+  renderNewAnswerView: function () {
     var newAnswerView = new SU.Views.NewAnswerView({
-      model: newAnswer
+      model: new SU.Models.Answer({
+        question_id: this.question_id
+      }),
+      parentView: this,
     });
     this.$('.new-answer').html(newAnswerView.render().$el);
   },
 
-  fetchThenRender: function () {
+  fetchThenRenderAnswersList: function () {
     var that = this;
-    console.log("  fetchThenRender called");
 
-    var question_answers = new SU.Collections.QuestionAnswers({
-      question_id: this.model.get("id")
-    });
-
-    question_answers.fetch({
+    this.answers.fetch({
       success: function () {
-        console.log("success fetching question_answers!");
-        var answersListView = new SU.Views.AnswersListView({
-          question_id: that.model.get("id"),
-          collection: question_answers
-        });
-
-        that.$('.answer-list').html(answersListView.render().$el);
+        that.renderAnswersList();
       },
       error: function () {
-        console.log("error fetching question_answers!");
+        console.log("error fetching answers!");
       }
     });
-  }
+  },
+
+  renderAnswersList: function () {
+    var answersListView = new SU.Views.AnswersListView({
+      question_id: this.question_id,
+      collection: this.answers,
+      parentView: this
+    });
+
+    this.$('.answer-list').html(answersListView.render().$el);
+  },
+
+  addToAnswers: function (answer) {
+    this.answers.add(answer);
+  },
 });

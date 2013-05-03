@@ -1,6 +1,6 @@
 SU.Views.NewQuestionView = Backbone.View.extend({
   initialize: function () {
-    console.log("NewQuestionView initialized");
+
   },
 
   events: {
@@ -10,8 +10,6 @@ SU.Views.NewQuestionView = Backbone.View.extend({
   template: JST["questions/new"],
 
   render: function () {
-    console.log("Rendering NewQuestionView");
-
     var renderedContent = this.template();
 
     this.$el.html(renderedContent);
@@ -22,11 +20,11 @@ SU.Views.NewQuestionView = Backbone.View.extend({
   postQuestion: function (event) {
     console.log("Posting question");
 
-    var question = new SU.Models.Question({
+    this.model.set({
       "title": this.$('#question_title').val(),
       "body": this.$('#question_body').val(),
     });
 
-    question.save();
+    this.model.save();
   },
 });
