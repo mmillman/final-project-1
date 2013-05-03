@@ -45,33 +45,88 @@ ActiveRecord::Base.transaction do
   )
 
   Question.create!(
-    :title => "No overflow??",
-    :body => "I initialized an array of length 5 and added one item. Everything
-      seems to be okay. How to fix?",
+    :title => "Unusual behavior with array?",
+    :body => "I wrote some code to make an array of 5 items and then I indexed
+      into position 2. I got no errors. Could someone help me out?",
     :asker_id => 1,
     :accepted_answer_id => 2,
   )
   Question.create!(
-    :title => "How to fix git status?",
+    :title => "How to use git status properly?",
     :body => "I typed git status and it showed the status of my files.
-      How to fix?",
+      What am I missing?",
     :asker_id => 1,
+    :accepted_answer_id => nil,
+  )
+  Question.create!(
+    :title => "How to make a text input field fill up remaining width of div?",
+    :body => "I'd like to have a label 'Title', followed by a text field
+      that expands to fill the div's width. If I set the width to 100%,
+      then the text input field will go to the next line and fill up the
+      entire width of the div. I'd like to see the text input field stay
+      on the same line as the label.",
+    :asker_id => 1,
+    :accepted_answer_id => nil,
+  )
+  Question.create!(
+    :title => "How to get expected CSS behavior?",
+    :body => "I just went to style my website, and everything lined up properly
+      -- what am I doing wrong?",
+    :asker_id => 2,
+    :accepted_answer_id => nil,
+  )
+  Question.create!(
+    :title => "What is the best way to get rails out of my head?",
+    :body => "I tried out a few association methods in rails today that I didn't
+      define myself, and they worked! Help please!",
+    :asker_id => 3,
+    :accepted_answer_id => nil,
+  )
+  Question.create!(
+    :title => "What's the best practice to rectify this situation?",
+    :body => "Today I ran some code and it didn't have any errors. What's the
+      best way to address this?",
+    :asker_id => 2,
     :accepted_answer_id => nil,
   )
 
   Answer.create!(
     :answerer_id => 2,
     :question_id => 1,
-    :body => "Add 5 more items to your array to address the issue.",
+    :body => "Index into a position greater than 4 and call a method on the
+      nil result.",
   )
   Answer.create!(
     :answerer_id => 3,
     :question_id => 1,
-    :body => "Initialize more arrays of length 5 and add 6 items to one.",
+    :body => "Write your array of length 5 in C and then index into a position
+      greater than 4.",
   )
   Answer.create!(
     :answerer_id => 3,
     :question_id => 2,
-    :body => "Try making a typo when you type it, like 'git sattus'",
+    :body => "Try making a typo, like 'git sattus'",
+  )
+  Answer.create!(
+    :answerer_id => 2,
+    :question_id => 3,
+    :body => "This question is not appropriate for Stack Half Full since you
+      do not have things working already.",
+  )
+  Answer.create!(
+    :answerer_id => 3,
+    :question_id => 3,
+    :body => "People would be able to help you better if you solved your
+      problem first.",
+  )
+  Answer.create!(
+    :answerer_id => 3,
+    :question_id => 4,
+    :body => "Keep going. CSS will deliver.",
+  )
+  Answer.create!(
+    :answerer_id => 3,
+    :question_id => 6,
+    :body => "Get very little sleep, eat poorly, and have a few drinks",
   )
 end
