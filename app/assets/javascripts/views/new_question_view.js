@@ -18,6 +18,7 @@ SU.Views.NewQuestionView = Backbone.View.extend({
   },
 
   postQuestion: function (event) {
+    var that = this;
     console.log("Posting question");
 
     this.model.set({
@@ -27,6 +28,7 @@ SU.Views.NewQuestionView = Backbone.View.extend({
 
     this.model.save({}, {
       success: function () {
+        SU.Store.allQuestions.add(that.model);
         Backbone.history.navigate('#/questions');
       }
     });
