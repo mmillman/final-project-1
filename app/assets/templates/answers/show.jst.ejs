@@ -6,10 +6,19 @@
 
 <br>
 
-<%= answer.escape("answerer_id") %>
+<div class="right">
+  <span title="<%= answer.escape("created_at") %>">
+    answered <%= $.timeago(answer.escape("created_at")) %>
+  </span>
+  <br>
+  <div class="right">
+    <%= answer.escape("answerer_id") %>
+  </div>
+</div>
 
 <br>
 
 <div class="comments"></div>
+<div class="new-comment hidden"></div>
 
-<button>Add comment</button>
+<button class="add-comment">Add comment</button>

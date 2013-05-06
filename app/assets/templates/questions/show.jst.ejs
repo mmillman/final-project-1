@@ -1,12 +1,29 @@
-<div class="question-title">
-  <%= question.escape("title") %>
-</div>
+<div class="question">
+  <div class="question-title">
+    <%= question.escape("title") %>
+  </div>
 
-<br>
-<br>
+  <br>
+  <br>
 
-<div class="question-body">
-  <%= question.escape("body") %>
+  <div class="question-body">
+    <%= question.escape("body") %>
+  </div>
+
+  <br>
+
+  <div class="question-info right">
+    <div class="left">
+      <span title="<%= question.escape("created_at") %>">
+        asked <%= $.timeago(question.escape("created_at")) %>
+      </span>
+      <br>
+      <div class="">
+        <%= question.escape("asker_id") %>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
 </div>
 
 <div class="accepted-answer"></div>

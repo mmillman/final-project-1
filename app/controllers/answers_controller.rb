@@ -13,6 +13,6 @@ class AnswersController < ApplicationController
   def index
     answers = Answer.where(["question_id = ?", params[:question_id]])
 
-    render :json => answers
+    render :json => answers.includes(:answerer)
   end
 end

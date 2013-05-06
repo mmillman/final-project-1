@@ -57,6 +57,10 @@ ul.hmenu li {
   font-weight: bold;
 }
 
+.question {
+  background-color: #ECF4FF;
+}
+
 .question-title {
   display: inline;
   font-weight: bold;
@@ -76,6 +80,11 @@ ul.hmenu li {
   height: 150px;
 }
 
+.question-info {
+  width: 200px;
+  background: #BBDAFF;
+}
+
 .new-answer-form {
   width: 500px;
 }
@@ -86,10 +95,24 @@ ul.hmenu li {
   height: 150px;
 }
 
+.comment-body textarea {
+  resize: none;
+  width: 60%;
+  height: 100px;
+}
+
 .right {
   float: right;
 }
 
+.left {
+  float: left;
+}
+
 .clear {
   clear: both;
+}
+
+.hidden {
+  display: none;
 }
