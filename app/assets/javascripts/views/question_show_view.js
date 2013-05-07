@@ -34,6 +34,7 @@ SU.Views.QuestionShowView = Backbone.View.extend({
 
   renderNewCommentView: function () {
     var newCommentView = new SU.Views.NewCommentView({
+      parentView: this,
       model: new SU.Models.Comment({
         commentable_id: this.model.get("id"),
         commentable_type: "Question"
@@ -59,7 +60,7 @@ SU.Views.QuestionShowView = Backbone.View.extend({
 
   renderCommentsList: function () {
     var questionCommentsListView = new SU.Views.CommentsListView({
-      collection: this.comments
+      collection: this.comments,
     });
 
     this.$('.comments-list').html(questionCommentsListView.render().$el);
@@ -100,6 +101,10 @@ SU.Views.QuestionShowView = Backbone.View.extend({
 
   addAnswer: function (answer) {
     this.answers.add(answer);
+  },
+
+  addComment: function (comment) {
+    this.comments.add(comment);
   },
 
   showNewCommentView: function (event) {

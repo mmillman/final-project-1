@@ -33,6 +33,8 @@ SU.Views.NewAnswerView = Backbone.View.extend({
         that.model = new SU.Models.Answer({
           question_id: that.model.get("question_id")
         });
+
+        that.$("#answer_body").val("");
       }
     });
   }

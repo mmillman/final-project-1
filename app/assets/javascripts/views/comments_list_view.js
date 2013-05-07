@@ -1,6 +1,8 @@
 SU.Views.CommentsListView = Backbone.View.extend({
-  initialize: function () {
+  initialize: function (options) {
     console.log("CommentsListView initialized");
+
+    this.collection.on('add', this.render, this);
   },
 
   template: JST["comments/list"],

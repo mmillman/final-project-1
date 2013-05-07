@@ -27,6 +27,7 @@ SU.Views.AnswerShowView = Backbone.View.extend({
 
   renderNewCommentView: function () {
     var newCommentView = new SU.Views.NewCommentView({
+      parentView: this,
       model: new SU.Models.Comment({
         commentable_id: this.model.get("id"),
         commentable_type: "Answer"
@@ -61,5 +62,9 @@ SU.Views.AnswerShowView = Backbone.View.extend({
     console.log("Showing NewCommentView for answer");
     this.$('.new-answer-comment').toggleClass('hidden');
     this.$('.add-answer-comment').toggleClass('hidden');
+  },
+
+  addComment: function (comment) {
+    this.comments.add(comment);
   }
 });
