@@ -1,0 +1,9 @@
+<div class="comment">
+  <%= comment.escape("body") %>
+  -- <%= comment.escape("commenter_id") %>
+  (<span title="<%= comment.escape("created_at") %>">
+    <%= $.timeago(comment.escape("created_at")) %>
+  </span>)
+
+  <div class="clear"></div>
+</div>

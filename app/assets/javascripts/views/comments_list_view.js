@@ -5,16 +5,19 @@ SU.Views.CommentsListView = Backbone.View.extend({
     this.collection.on('add', this.render, this);
   },
 
-  template: JST["comments/list"],
-
   render: function () {
+    var that = this;
     console.log("Rendering CommentsListView");
 
-    var renderedContent = this.template({
-      comments: this.collection
-    });
+    this.$el.empty();
 
-    this.$el.html(renderedContent);
+    this.collection.each(function (comment) {
+      var commentShowView = new SU.Views.CommentShowView({
+        model: comment
+      });
+
+      that.$el.append(commentShowView.render().$el);
+    });
 
     return this;
   },
