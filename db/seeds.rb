@@ -129,4 +129,23 @@ ActiveRecord::Base.transaction do
     :question_id => 6,
     :body => "Get very little sleep, eat poorly, and have a few drinks",
   )
+
+  Comment.create!(
+    :commenter_id => 2,
+    :commentable_id => 1,
+    :commentable_type => 'Question',
+    :body => "What a great question!"
+  )
+  Comment.create!(
+    :commenter_id => 3,
+    :commentable_id => 1,
+    :commentable_type => 'Question',
+    :body => "I was wondering the same thing!"
+  )
+  Comment.create!(
+    :commenter_id => 1,
+    :commentable_id => 1,
+    :commentable_type => 'Answer',
+    :body => "Well written answer here. Very nice."
+  )
 end

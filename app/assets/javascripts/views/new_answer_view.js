@@ -28,7 +28,7 @@ SU.Views.NewAnswerView = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         console.log("new answer successfully saved!");
-        that.parentView.addToAnswers(that.model);
+        that.parentView.addAnswer(that.model);
 
         that.model = new SU.Models.Answer({
           question_id: that.model.get("question_id")

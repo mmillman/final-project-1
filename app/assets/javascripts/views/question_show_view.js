@@ -4,12 +4,21 @@ SU.Views.QuestionShowView = Backbone.View.extend({
     this.answers = new SU.Collections.QuestionAnswers({
       question_id: this.question_id
     });
+    this.comments = new SU.Collections.QuestionComments({
+      question_id: this.question_id
+    });
+  },
+
+  events: {
+    "click button.add-question-comment": "showNewCommentView"
   },
 
   template: JST["questions/show"],
 
   render: function () {
     this.renderTemplate();
+    this.renderNewCommentView();
+    this.fetchThenRenderQuestionCommentsList();
     this.renderNewAnswerView();
     this.fetchThenRenderAnswersList();
 
@@ -21,6 +30,39 @@ SU.Views.QuestionShowView = Backbone.View.extend({
       question: this.model
     });
     this.$el.html(renderedContent);
+  },
+
+  renderNewCommentView: function () {
+    var newCommentView = new SU.Views.NewCommentView({
+      model: new SU.Models.Comment({
+        commentable_id: this.model.get("id"),
+        commentable_type: "Question"
+      })
+    });
+
+    this.$('.new-question-comment').html(newCommentView.render().$el);
+  },
+
+  fetchThenRenderQuestionCommentsList: function () {
+    var that = this;
+
+    this.comments.fetch({
+      success: function () {
+        that.renderCommentsList();
+      },
+      error: function () {
+        console.log("error fetching question comments!");
+      }
+    });
+
+  },
+
+  renderCommentsList: function () {
+    var questionCommentsListView = new SU.Views.CommentsListView({
+      collection: this.comments
+    });
+
+    this.$('.comments-list').html(questionCommentsListView.render().$el);
   },
 
   renderNewAnswerView: function () {
@@ -56,7 +98,14 @@ SU.Views.QuestionShowView = Backbone.View.extend({
     this.$('.answer-list').html(answersListView.render().$el);
   },
 
-  addToAnswers: function (answer) {
+  addAnswer: function (answer) {
     this.answers.add(answer);
   },
+
+  showNewCommentView: function (event) {
+    console.log("Showing NewCommentView for question");
+    this.$('.new-question-comment').toggleClass('hidden');
+    this.$('.add-question-comment').toggleClass('hidden');
+  }
+
 });

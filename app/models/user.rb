@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_one :profile, :class_name => "UserProfile"
   has_many :questions, :foreign_key => :asker_id
   has_many :answers, :foreign_key => :answerer_id
-  has_many :comments, :as => :commentable
+  has_many :comments, :foreign_key => :commenter_id, :as => :commentable
   has_many :question_votes
   has_many :answer_votes
 end

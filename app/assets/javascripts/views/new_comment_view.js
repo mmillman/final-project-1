@@ -20,6 +20,13 @@ SU.Views.NewCommentView = Backbone.View.extend({
   },
 
   postComment: function() {
-    console.log("Posting comment");
+    console.log("Posting comment for", this.model.escape("commentable_type"));
+
+    this.model.set({
+      "body": this.$(".comment").val()
+      // set collection for this model
+    });
+
+    this.model.save();
   }
 });

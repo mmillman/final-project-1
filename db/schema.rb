@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430051953) do
+ActiveRecord::Schema.define(:version => 20130506202440) do
 
   create_table "answer_votes", :force => true do |t|
     t.integer  "user_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130430051953) do
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.integer  "user_id"
+    t.integer  "commenter_id"
     t.text     "body"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20130430051953) do
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+  add_index "comments", ["commenter_id"], :name => "index_comments_on_user_id"
 
   create_table "question_votes", :force => true do |t|
     t.integer  "user_id"

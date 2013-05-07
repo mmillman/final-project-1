@@ -5,7 +5,12 @@ StackOverflowClone::Application.routes.draw do
   root :to => 'questions#index'
 
   resources :questions, :only => [:create] do
+    resources :comments, :only => [:create, :index]
     resources :answers, :only => [:create, :index]
+  end
+
+  resources :answers, :only => [:index] do
+    resources :comments, :only => [:create, :index]
   end
 
 end
