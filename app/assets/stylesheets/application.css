@@ -95,6 +95,16 @@ ul.hmenu li {
   height: 150px;
 }
 
+.comments-list {
+  width: 95%;
+  text-align: left;
+  float: right;
+}
+
+.comment {
+  width: 100%;
+}
+
 .comment-body textarea {
   resize: none;
   width: 60%;
