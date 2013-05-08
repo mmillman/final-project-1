@@ -148,4 +148,48 @@ ActiveRecord::Base.transaction do
     :commentable_type => 'Answer',
     :body => "Well written answer here. Very nice."
   )
+
+  Tag.create!(
+    :name => "fun"
+  )
+  Tag.create!(
+    :name => "homework"
+  )
+  Tag.create!(
+    :name => "important"
+  )
+  Tag.create!(
+    :name => "urgent"
+  )
+  Tag.create!(
+    :name => "curious"
+  )
+  Tag.create!(
+    :name => "funny"
+  )
+
+  Tagging.create!(
+    :tag_id => 6,
+    :question_id => 1
+  )
+  Tagging.create!(
+    :tag_id => 5,
+    :question_id => 2
+  )
+  Tagging.create!(
+    :tag_id => 4,
+    :question_id => 3
+  )
+  Tagging.create!(
+    :tag_id => 3,
+    :question_id => 4
+  )
+  Tagging.create!(
+    :tag_id => 2,
+    :question_id => 5
+  )
+  Tagging.create!(
+    :tag_id => 1,
+    :question_id => 6
+  )
 end
