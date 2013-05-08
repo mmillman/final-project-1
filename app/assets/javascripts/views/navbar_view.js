@@ -3,17 +3,14 @@ SU.Views.NavbarView = Backbone.View.extend({
     this.links = options.links;
   },
 
-  render: function () {
-    var $ul = $('<ul></ul>');
+  template: JST["navbars/main"],
 
-    _(this.links).each(function(link) {
-      $ul.append('<li><a href="' + link.href + '">' + link.html + '</a></li>');
+  render: function () {
+    var renderedContent = this.template({
+      links: this.links
     });
 
-    $ul.find('li:last-child').css('float', 'right');
-
-    this.$el.html($ul);
-    this.$el.append('<div style="clear: both;"></div>');
+    this.$el.html(renderedContent);
 
     return this;
   },

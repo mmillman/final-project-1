@@ -1,0 +1,9 @@
+<ul class="nav nav-pills">
+  <% _(links).each(function(link) { %>
+    <li>
+      <a href="<%= link.href %>">
+        <%= link.html %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
