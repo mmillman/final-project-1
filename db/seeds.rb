@@ -149,47 +149,22 @@ ActiveRecord::Base.transaction do
     :body => "Well written answer here. Very nice."
   )
 
-  Tag.create!(
-    :name => "fun"
-  )
-  Tag.create!(
-    :name => "homework"
-  )
-  Tag.create!(
-    :name => "important"
-  )
-  Tag.create!(
-    :name => "urgent"
-  )
-  Tag.create!(
-    :name => "curious"
-  )
-  Tag.create!(
-    :name => "funny"
-  )
+  tag_names = ["fun", "homework", "important", "urgent", "curious", "funny",
+    "interesting", "weird", "ruby", "rails", "javascript", "backbone",
+    "bootstrap", "kaminari"]
 
-  Tagging.create!(
-    :tag_id => 6,
-    :question_id => 1
-  )
-  Tagging.create!(
-    :tag_id => 5,
-    :question_id => 2
-  )
-  Tagging.create!(
-    :tag_id => 4,
-    :question_id => 3
-  )
-  Tagging.create!(
-    :tag_id => 3,
-    :question_id => 4
-  )
-  Tagging.create!(
-    :tag_id => 2,
-    :question_id => 5
-  )
-  Tagging.create!(
-    :tag_id => 1,
-    :question_id => 6
-  )
+  tag_names.each do |tag_name|
+    Tag.create!(
+      :name => tag_name
+    )
+  end
+
+  taggings = [[6, 1], [5, 2], [4, 3], [2, 5], [1, 6]]
+
+  taggings.each do |tagging|
+    Tagging.create!(
+      :tag_id => tagging[0],
+      :question_id => tagging[1]
+    )
+  end
 end

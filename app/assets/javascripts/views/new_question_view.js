@@ -45,7 +45,9 @@ SU.Views.NewQuestionView = Backbone.View.extend({
       var isNotAlreadyApplied = !_(this.tags).contains(inputTag);
       if (isValidTag && isNotAlreadyApplied) {
         this.$('.tags-list').append(
-          $('<div><li class="tag">' + inputTag + '</li></div>')
+          $('<div><li class="tag">' +
+            inputTag +
+            '&nbsp;&nbsp;<button class="close">&times;</button>   </li></div>')
         )
         this.tags.push(inputTag);
         this.$('.tag-typeahead').val("");

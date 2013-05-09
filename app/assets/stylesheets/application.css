@@ -60,3 +60,7 @@ ul.hmenu li {
 .bold {
   font-weight: bold;
 }
+
+.padleft50 {
+  padding-left: 50px;
+}
