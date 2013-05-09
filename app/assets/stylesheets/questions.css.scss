@@ -2,8 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.questions-list-all li {
-  padding-bottom: 15px;
+.questions-list-all {
+  li {
+    margin: 5px 0px 5px 25px;
+    font-size: 20px;
+  }
+  hr {
+    margin-left: 8px;
+  }
 }
 
 .new-question-form {
@@ -22,6 +28,7 @@
 .question-title {
   display: inline;
   font-weight: bold;
+  font-size: 30px;
   input {
     width: 100%;
   }
@@ -45,13 +52,20 @@
 .tags-list {
   display: inline;
   list-style: none;
+  padding-left: 20px;
   div {
     float:left;
     li {
-      margin-left: 10px;
+      position: relative;
+      top: -7px;
+      margin: 5px;
       padding: 3px 5px;
       border-radius: 5px;
       background-color: #EBEBB5;
+    }
+    button {
+      position: relative;
+      top: -2px;
     }
   }
 }
