@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
   has_many :comments, :foreign_key => :commenter_id, :as => :commentable
   has_many :question_votes
   has_many :answer_votes
+
+  validates :display_name, :presence => true
 end

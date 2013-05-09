@@ -3,4 +3,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commenter, :class_name => "User"
   belongs_to :commentable, :polymorphic => true
+
+  validates :commentable_id, :commentable_type, :commenter_id, :presence => true
+  validates :body, :presence => :true
 end
