@@ -1,7 +1,8 @@
-<div class="comment">
+<div class="comment well well-small">
   <%= comment.escape("body") %>
   -- <%= comment.escape("commenter_id") %>
-  (<span title="<%= comment.escape("created_at") %>">
-    <%= $.timeago(comment.escape("created_at")) %>
-  </span>)
+  <span title="<%= comment.escape("created_at") %>">
+    (<%= $.timeago(comment.escape("created_at")) %>)
+  </span>
 </div>
+<div class="clearfix">

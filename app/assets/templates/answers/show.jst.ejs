@@ -1,25 +1,26 @@
 <hr>
 
-<div class="answer-body">
-  <%= answer.escape("body") %>
-</div>
+<div class="answer">
+  <div class="answer-body">
+    <%= answer.escape("body") %>
+  </div>
 
-<br>
-
-<div class="right">
-  <span title="<%= answer.escape("created_at") %>">
-    answered <%= $.timeago(answer.escape("created_at")) %>
-  </span>
   <br>
-  <div class="right">
+
+  <div class="pull-right">
+    <span title="<%= answer.escape("created_at") %>">
+      answered <%= $.timeago(answer.escape("created_at")) %>
+    </span>
+    <br>
     <%= answer.escape("answerer_id") %>
   </div>
+  <div class="clearfix"></div>
 </div>
 
 <br>
 
 <div class="comments-list"></div>
-<div class="clear"></div>
+<div class="clearfix"></div>
 <div class="new-answer-comment hidden"></div>
 
-<button class="add-answer-comment">Add comment</button>
+<button class="add-answer-comment btn">Add comment</button>

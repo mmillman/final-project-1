@@ -12,27 +12,23 @@
 
   <br>
 
-  <div class="question-info right">
-    <div class="left">
-      <span title="<%= question.escape("created_at") %>">
-        asked <%= $.timeago(question.escape("created_at")) %>
-      </span>
-      <br>
-      <div class="">
-        <%= question.escape("asker_id") %>
-      </div>
-    </div>
+  <div class="question-info pull-right">
+    <span title="<%= question.escape("created_at") %>">
+      asked <%= $.timeago(question.escape("created_at")) %>
+    </span>
+    <br>
+    <%= question.escape("asker_id") %>
   </div>
-  <div class="clear"></div>
+  <div class="clearfix"></div>
 </div>
 
 <br>
 
 <div class="comments-list"></div>
-<div class="clear"></div>
+<div class="clearfix"></div>
 <div class="new-question-comment hidden"></div>
 
-<button class="add-question-comment">Add comment</button>
+<button class="add-question-comment btn">Add comment</button>
 
 <div class="accepted-answer"></div>
 <div class="answer-list"></div>

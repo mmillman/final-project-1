@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  # respond_to :json
-  # respond_to :html, :only => [:index]
+  respond_to :json
+  respond_to :html, :only => [:index]
 
   def create
     question = Question.new(params[:question])

@@ -1,3 +1,19 @@
 // Place all the styles related to the answers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.answer {
+  background-color: #44FF99;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.new-answer-form {
+  width: 500px;
+}
+
+.answer-body textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+}

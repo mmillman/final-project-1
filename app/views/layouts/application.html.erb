@@ -8,21 +8,23 @@
 </head>
 <body>
   <div class="container">
-    <div class="right">
-      <ul class="hmenu">
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-      </ul>
+      <div class="pull-right">
+        <ul class="hmenu">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    <div class="head">
+      <div class="hlogo pull-left">
+        <h1><a href="/">Stack Half Full</a></h1>
+      </div>
+      <div class="main-nav"></div>
     </div>
-    <div class="clear"></div>
-    <div class="hlogo">
-      <h1><a href="/">Stack Half Full</a></h1>
-    </div>
-    <div class="main-nav"></div>
 
     <!-- Devise setup step 3 -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <!-- <p class="notice"><%= notice %></p> -->
+      <!-- <p class="alert"><%= alert %></p> -->
 
     <%= yield %>
 

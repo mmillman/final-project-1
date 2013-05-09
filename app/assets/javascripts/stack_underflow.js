@@ -5,13 +5,21 @@ window.SU = {
   Routers: {},
   Store: {},
 
-  initialize: function ($content, $navbar, questionsData) {
+  initialize: function ($content, $navbar, questionsData, tagsData) {
     questions = new SU.Collections.Questions();
     _(questionsData).each(function(questionsDatum) {
       questions.add(new SU.Models.Question(questionsDatum));
     });
 
     SU.Store.allQuestions = questions;
+
+    tags = new SU.Collections.Tags();
+    _(tagsData).each(function(tagsDatum) {
+      tags.add(new SU.Models.Tag(tagsDatum))
+    });
+
+    SU.Store.allTags = tags;
+    SU.Store.allTagNames = tags.pluck("name");
 
     this.installNavbar($navbar);
 

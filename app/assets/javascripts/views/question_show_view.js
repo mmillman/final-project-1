@@ -10,7 +10,8 @@ SU.Views.QuestionShowView = Backbone.View.extend({
   },
 
   events: {
-    "click button.add-question-comment": "showNewCommentView"
+    "click button.add-question-comment": "showNewCommentView",
+    "blur .new-comment-form .comment": "hideNewCommentView"
   },
 
   template: JST["questions/show"],
@@ -109,8 +110,16 @@ SU.Views.QuestionShowView = Backbone.View.extend({
 
   showNewCommentView: function (event) {
     console.log("Showing NewCommentView for question");
-    this.$('.new-question-comment').toggleClass('hidden');
-    this.$('.add-question-comment').toggleClass('hidden');
-  }
+    this.$('.new-question-comment').removeClass('hidden');
+    this.$('.add-question-comment').addClass('hidden');
+  },
 
+  hideNewCommentView: function (event) {
+    console.log("1comment body is: ", this.$('.comment-body').val());
+    if (this.$('.comment-body').val() === "") { return };
+    console.log("2comment body is: ", this.$('.comment-body').val());
+    console.log("Hiding NewCommentView for question");
+    this.$('.new-question-comment').addClass('hidden');
+    this.$('.add-question-comment').removeClass('hidden');
+  }
 });

@@ -1,6 +1,7 @@
 <script type="text/javascript">
   $(function () {
     var questionsData = <%= Question.all.to_json.html_safe %>
+    var tagsData = <%= Tag.all.to_json.html_safe %>
 
     var $content = $('.content');
     var $navbar = $('.main-nav');
@@ -8,7 +9,8 @@
     SU.initialize(
       $content,
       $navbar,
-      questionsData
+      questionsData,
+      tagsData
     );
   });
 </script>

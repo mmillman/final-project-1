@@ -1,3 +1,24 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*.comments-list {
+  width: 95%;
+  text-align: left;
+  float: right;
+}*/
+
+.comments-list {
+  margin-left: 0px;
+  width: 70%;
+}
+
+.comment {
+  margin-left: 50px;
+}
+
+.comment-body textarea {
+  resize: none;
+  width: 63%;
+  height: 100px;
+}
