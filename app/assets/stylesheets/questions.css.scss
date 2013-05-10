@@ -6,9 +6,15 @@
   li {
     margin: 5px 0px 5px 25px;
     font-size: 20px;
+    &:hover {
+      padding: 0px 0px 0px 3px;
+    }
   }
   hr {
-    margin-left: 8px;
+    margin: 0px 0px 0px 8px;
+  }
+  a {
+    text-decoration: none;
   }
 }
 
